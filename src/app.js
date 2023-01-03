@@ -39,3 +39,22 @@ export const getTotal = (items = [], discount = 0) => {
     }, 0)
     return total - total * discount / 100;
 }
+
+/**
+ * Подсчёт баллов успеваемости студентов
+ *
+ * @returns {string}
+ */
+const amount = {
+  Anna: 10,
+  Olga: 1,
+  Ivan: 5,
+};
+
+function getScore() {
+  return (
+    'Количество баллов всех студентов:' +
+    (amount.Anna + amount.Olga + amount.Ivan)
+  );
+}
+console.log(getScore());
