@@ -43,18 +43,21 @@ export const getTotal = (items = [], discount = 0) => {
 /**
  * Подсчёт баллов успеваемости студентов
  *
- * @returns {string}
+ * @returns {number}
  */
-const amount = {
+
+function getScore(amount) {
+  let sum = 0;
+  for (let key in amount) {
+    sum += amount[key];
+  }
+  return sum;
+}
+
+let amount = {
   Anna: 10,
   Olga: 1,
   Ivan: 5,
 };
 
-function getScore() {
-  return (
-    'Количество баллов всех студентов:' +
-    (amount.Anna + amount.Olga + amount.Ivan)
-  );
-}
-console.log(getScore());
+console.log(getScore(amount));
